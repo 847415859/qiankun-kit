@@ -1,5 +1,8 @@
 /.idea/
 qiankun-kit.iml
+*.cfg
+
+
 =======
 # Compiled class file
 *.class
