@@ -3,6 +3,8 @@ package com.qiankun.excel;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.JSONObject;
 import com.qiankun.common.StringUtils;
+
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -77,6 +79,7 @@ public class QiankunTable extends QiankunExcel {
 
     static Object cellValue(JSONObject obj, String key) {
         String[] keys = key.split(",");
-        return Stream.of(keys).map(k -> obj.getString(k)).filter(StringUtils::isNotBlank).findFirst().orElse(null);
+        return Stream.of(keys).map(k -> obj.get(k) instanceof BigDecimal ? obj.getBigDecimal(k).stripTrailingZeros().toPlainString() : obj.getString(k))
+                .filter(StringUtils::isNotBlank).findFirst().orElse(null);
     }
 }
