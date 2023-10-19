@@ -108,6 +108,7 @@ public abstract class WebUtils {
 	    setContentTypeAttachementHeader(request, response, CONTENT_TYPE_CSV, fileName);
 	}
 	
+	
 	public static void setPdfInlineHeader(HttpServletRequest request, HttpServletResponse response) {
 		setContentTypeInlineHeader(request, response, CONTENT_TYPE_PDF);
 	}

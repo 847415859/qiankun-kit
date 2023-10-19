@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 /**
- * @Description:
+ * @Description:  Http请求工具类，借助 okhttp3
  * @Date : 2023/01/14 15:20
  * @Auther : tiankun
  */
