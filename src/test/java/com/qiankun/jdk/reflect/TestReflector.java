@@ -36,5 +36,7 @@ public class TestReflector {
         Student student = new Student();
         Object hobbyVal = invoker.invoke(student, null);
         System.out.println("hobbyVal = " + hobbyVal);
+        Class<?> hobbyClass = invoker.getType();
+        System.out.println("hobbyClass = " + hobbyClass);
     }
 }
